@@ -1,0 +1,7 @@
+{
+  "name": "NexusInvest - Modern Fintech Dashboard",
+  "description": "A professional and secure investment platform UI featuring a comprehensive dashboard, real-time analytics, and investment plan management.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
