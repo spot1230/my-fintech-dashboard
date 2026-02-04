@@ -1,0 +1,20 @@
+name: Build and Package
+on:
+  push:
+    branches: [ "main" ] # Triggers whenever you push to 'main'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # Fetches your code
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20' # Sets up the environment
+      - run: npm install # Installs dependencies
+      - run: npm run build # Compiles your React app
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-build
+          path: dist/ # Saves the 'dist' folder as a ZIP
